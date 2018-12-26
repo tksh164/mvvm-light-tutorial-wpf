@@ -1,0 +1,22 @@
+﻿<Window x:Class="WpfMvvmLightTutorial.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfMvvmLightTutorial"
+        xmlns:view="clr-namespace:WpfMvvmLightTutorial.View"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="1600">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="800"/>
+            <ColumnDefinition Width="800"/>
+        </Grid.ColumnDefinitions>
+
+        <view:EmployeeInfoView Grid.Column="0">
+        </view:EmployeeInfoView>
+
+        <view:SaveEmployeeView Grid.Column="1">
+        </view:SaveEmployeeView>
+    </Grid>
+</Window>

@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="WpfMvvmLightTutorial.View.SaveEmployeeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             DataContext="{Binding Main, Source={StaticResource Locator}}"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="48*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="51*"/>
+            <RowDefinition Height="45*"/>
+            <RowDefinition Height="48*"/>
+            <RowDefinition Height="78*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="106*"/>
+            <ColumnDefinition Width="119*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0" TextWrapping="Wrap" Text="Employee No:"/>
+        <TextBox Grid.Row="0" Grid.Column="1" TextWrapping="Wrap" Text="{Binding Employee.EmployeeID, Mode=TwoWay}"/>
+
+        <TextBlock Grid.Row="1" TextWrapping="Wrap" Text="Employee Name:"/>
+        <TextBox Grid.Row="1" Grid.Column="1" TextWrapping="Wrap" Text="{Binding Employee.EmployeeName, Mode=TwoWay}"/>
+
+        <TextBlock Grid.Row="2" Grid.Column="0" TextWrapping="Wrap" Text="Salary:"/>
+        <TextBox Grid.Row="2" Grid.Column="1" TextWrapping="Wrap" Text="{Binding Employee.Salary, Mode=TwoWay}"/>
+
+        <TextBlock Grid.Row="3" Grid.Column="0" TextWrapping="Wrap" Text="Department Name:"/>
+        <TextBox Grid.Row="3" Grid.Column="1" TextWrapping="Wrap" Text="{Binding Employee.DepartmentName, Mode=TwoWay}"/>
+
+        <TextBlock Grid.Row="4" Grid.Column="0" TextWrapping="Wrap" Text="Designation:"/>
+        <TextBox Grid.Row="4" Grid.Column="1" TextWrapping="Wrap" Text="{Binding Employee.Designation, Mode=TwoWay}"/>
+
+        <Button Grid.Row="5" Grid.ColumnSpan="2"
+                Content="Save Employee" FontSize="20" FontWeight="Bold"
+                Command="{Binding SaveCommand}" CommandParameter="{Binding Employee}"/>
+    </Grid>
+</UserControl>
